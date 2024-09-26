@@ -1,0 +1,12 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@slack/bolt": "npm:@slack/bolt@^3.21.4",
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.2",
+    "jsdom": "npm:jsdom@^25.0.1",
+    "rss-parser": "npm:rss-parser@^3.13.0"
+  }
+}
