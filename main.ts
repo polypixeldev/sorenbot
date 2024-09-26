@@ -6,9 +6,9 @@ import jsdom from "jsdom";
 // Initializes your app with your bot token and signing secret
 const app = new Slack.App({
   token: Deno.env.get("SLACK_BOT_TOKEN"),
-  // signingSecret: Deno.env.get("SLACK_SIGNING_SECRET"),
+  signingSecret: Deno.env.get("SLACK_SIGNING_SECRET"),
   appToken: Deno.env.get("SLACK_APP_TOKEN"),
-  socketMode: true
+  // socketMode: true
 });
 
 const parser = new Parser();
@@ -149,8 +149,8 @@ app.command("/soren", async ({ client, body, ack, command }) => {
 
 (async () => {
   // Start your app
-  // await app.start(Deno.env.get("PORT") || 3000);
-  await app.start();
+  await app.start(Deno.env.get("PORT") || 3000);
+  // await app.start();
 
   console.log('⚡️ Bolt app is running!');
 })();
